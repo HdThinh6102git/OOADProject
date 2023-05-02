@@ -1,15 +1,23 @@
 package com.hcmute.edu.vn.OronProject.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.hcmute.edu.vn.OronProject.dto.NewDTO;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class NewAPI {
-    @GetMapping("/test")
 
-    public String testAPI() {
+    @PostMapping(value = "/new")
+    public NewDTO createNew(@RequestBody NewDTO model){
+        return model;
+    }
+    @PutMapping(value = "/new")
+    public NewDTO updateNew(@RequestBody NewDTO model){
+        return model;
+    }
 
-        return "success";
+    @DeleteMapping (value = "/new")
+    public void deleteNew(@RequestBody long[] ids){
 
     }
+
 }
