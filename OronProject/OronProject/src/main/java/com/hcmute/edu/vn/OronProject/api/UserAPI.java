@@ -14,9 +14,10 @@ public class UserAPI {
 
         return userService.save(dto);
     }
-    @PutMapping(value = "/user")
-    public UserDTO updateUser(@RequestBody UserDTO model){
-        return model;
+    @PutMapping(value = "/user/{id}")
+    public UserDTO updateUser(@RequestBody UserDTO dto,@PathVariable("id") Long id){
+        dto.setId(id);
+        return userService.save(dto);
     }
 
     @DeleteMapping(value = "/user")

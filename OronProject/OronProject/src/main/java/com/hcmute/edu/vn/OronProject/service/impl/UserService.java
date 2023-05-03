@@ -18,12 +18,22 @@ public class UserService implements IUserService {
 
     @Override
     public UserDTO save(UserDTO userDTO) {
-        //Convert DTO to Entity
-        UserEntity userEntity = userConverter.toEntity(userDTO);
+
+        UserEntity userEntity = new UserEntity();
+        if (userDTO.getId() != null) {//update
+
+            //Find One By id
+            UserEntity oldUserEntity = userRepository.getOne(userDTO.getId());
+            userEntity = userConverter.toEntity(userDTO, oldUserEntity);
+        } else {//create
+            userEntity = userConverter.toEntity(userDTO);
+        }
 
         //Save entity to database
         userEntity = userRepository.save(userEntity);
         //Return DTO to API
         return userConverter.toDTO(userEntity);
     }
+
+
 }

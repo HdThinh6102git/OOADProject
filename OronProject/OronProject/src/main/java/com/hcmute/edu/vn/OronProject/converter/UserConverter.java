@@ -17,11 +17,15 @@ public class UserConverter {
         entity.setEmailAddress(dto.getEmailAddress());
         entity.setStatus(dto.getStatus());
 
+
         return entity;
     }
     public UserDTO toDTO(UserEntity entity){
         UserDTO dto = new UserDTO();
         //set dto values
+        if (entity.getId() != null) {
+            dto.setId(entity.getId());
+        }
         dto.setUserName(entity.getUserName());
         dto.setPassword(entity.getPassword());
         dto.setDisplayName(entity.getDisplayName());
@@ -31,5 +35,18 @@ public class UserConverter {
         dto.setStatus(entity.getStatus());
 
         return dto;
+    }
+
+    public UserEntity toEntity(UserDTO dto, UserEntity entity){
+
+        //set entity values
+        entity.setUserName(dto.getUserName());
+        entity.setPassword(dto.getPassword());
+        entity.setDisplayName(dto.getDisplayName());
+        entity.setAddress(dto.getAddress());
+        entity.setPhoneNumber(dto.getPhoneNumber());
+        entity.setEmailAddress(dto.getEmailAddress());
+        entity.setStatus(dto.getStatus());
+        return entity;
     }
 }

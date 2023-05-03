@@ -1,6 +1,6 @@
 package com.hcmute.edu.vn.OronProject.dto;
 
-public class UserDTO {
+public class UserDTO extends AbstractDTO{
     private String userName;
     private String password;
     private String displayName;
