@@ -24,6 +24,7 @@ public class UserService implements IUserService {
 
             //Find One By id
             UserEntity oldUserEntity = userRepository.getOne(userDTO.getId());
+            //set new values and assign to userEntity
             userEntity = userConverter.toEntity(userDTO, oldUserEntity);
         } else {//create
             userEntity = userConverter.toEntity(userDTO);

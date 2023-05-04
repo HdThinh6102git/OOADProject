@@ -33,6 +33,11 @@ public class UserConverter {
         dto.setPhoneNumber(entity.getPhoneNumber());
         dto.setEmailAddress(entity.getEmailAddress());
         dto.setStatus(entity.getStatus());
+        //base entity fields
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setCreatedBy(entity.getCreatedBy());
+        dto.setModifiedDate(entity.getModifiedDate());
+        dto.setModifiedBy(entity.getModifiedBy());
 
         return dto;
     }
