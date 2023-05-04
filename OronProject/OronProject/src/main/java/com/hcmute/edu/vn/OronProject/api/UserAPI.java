@@ -1,5 +1,6 @@
 package com.hcmute.edu.vn.OronProject.api;
 
+import com.hcmute.edu.vn.OronProject.api.loadData.output.UserOutput;
 import com.hcmute.edu.vn.OronProject.dto.UserDTO;
 import com.hcmute.edu.vn.OronProject.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,11 @@ public class UserAPI {
     @DeleteMapping(value = "/user")
     public void deleteUser(@RequestBody long[] ids){
         userService.delete(ids);
+    }
+    @GetMapping(value = "/user")
+    public UserOutput showListUser(){
+        UserOutput result = new UserOutput();
+        result.setListResult(userService.findAll());
+        return result;
     }
 }

@@ -8,6 +8,9 @@ import com.hcmute.edu.vn.OronProject.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class UserService implements IUserService {
     @Autowired
@@ -41,6 +44,17 @@ public class UserService implements IUserService {
         for(long item: ids) {
             userRepository.deleteById(item);
         }
+    }
+
+    @Override
+    public List<UserDTO> findAll() {
+        List<UserDTO> listResult = new ArrayList<>();
+        List<UserEntity> listEntity = userRepository.findAll();
+        for (UserEntity item: listEntity) {
+            UserDTO userDTO = userConverter.toDTO(item);
+            listResult.add(userDTO);
+        }
+        return listResult;
     }
 
 
