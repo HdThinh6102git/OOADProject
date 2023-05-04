@@ -36,5 +36,12 @@ public class UserService implements IUserService {
         return userConverter.toDTO(userEntity);
     }
 
+    @Override
+    public void delete(long[] ids) {
+        for(long item: ids) {
+            userRepository.deleteById(item);
+        }
+    }
+
 
 }

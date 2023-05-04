@@ -22,6 +22,6 @@ public class UserAPI {
 
     @DeleteMapping(value = "/user")
     public void deleteUser(@RequestBody long[] ids){
-
+        userService.delete(ids);
     }
 }
