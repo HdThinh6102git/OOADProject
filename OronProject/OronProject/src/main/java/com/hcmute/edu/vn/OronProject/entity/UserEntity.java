@@ -1,6 +1,8 @@
 package com.hcmute.edu.vn.OronProject.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,20 +10,24 @@ import java.util.List;
 @Entity
 @Table(name = "user")
 public class UserEntity extends BaseEntity{
-    @Column(name = "username")
+    @Column(name = "username", unique=true)
     private String userName;
     @Column(name = "password")
     private String password;
-    @Column(name = "display_name")
+    @Column(name = "display_name", unique=true)
     private String displayName;
-    @Column(name = "email_address")
+    @Column(name = "email_address", unique=true)
     private String emailAddress;
     @Column(name = "phone_number")
     private String phoneNumber;
     @Column(name = "address")
     private String address;
     @Column(name = "status")
-    private Integer status;
+    private Integer status = 1;
+    @Column(name = "profile_pic")
+    private String profilePic;
+    @Column(name = "cover_pic")
+    private String coverPic;
 
     //Relationship
     //User and Role
@@ -100,6 +106,21 @@ public class UserEntity extends BaseEntity{
         this.status = status;
     }
 
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
+
+    public String getCoverPic() {
+        return coverPic;
+    }
+
+    public void setCoverPic(String coverPic) {
+        this.coverPic = coverPic;
+    }
     //Getter and Setter for relationship
 
 
@@ -110,6 +131,7 @@ public class UserEntity extends BaseEntity{
     public void setRoles(List<RoleEntity> roles) {
         this.roles = roles;
     }
+
 
     public List<PostEntity> getPosts() {
         return posts;
@@ -134,4 +156,5 @@ public class UserEntity extends BaseEntity{
     public void setRegisters(List<RegisterEntity> registers) {
         this.registers = registers;
     }
+
 }

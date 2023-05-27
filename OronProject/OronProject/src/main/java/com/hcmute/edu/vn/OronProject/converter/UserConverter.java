@@ -15,7 +15,9 @@ public class UserConverter {
         entity.setAddress(dto.getAddress());
         entity.setPhoneNumber(dto.getPhoneNumber());
         entity.setEmailAddress(dto.getEmailAddress());
-        entity.setStatus(dto.getStatus());
+        entity.setProfilePic(dto.getProfilePic());
+        entity.setCoverPic(dto.getCoverPic());
+
 
 
         return entity;
@@ -33,6 +35,8 @@ public class UserConverter {
         dto.setPhoneNumber(entity.getPhoneNumber());
         dto.setEmailAddress(entity.getEmailAddress());
         dto.setStatus(entity.getStatus());
+        dto.setProfilePic(entity.getProfilePic());
+        dto.setCoverPic(entity.getCoverPic());
         //base entity fields
         dto.setCreatedDate(entity.getCreatedDate());
         dto.setCreatedBy(entity.getCreatedBy());
@@ -52,6 +56,8 @@ public class UserConverter {
         entity.setPhoneNumber(dto.getPhoneNumber());
         entity.setEmailAddress(dto.getEmailAddress());
         entity.setStatus(dto.getStatus());
+        entity.setProfilePic(dto.getProfilePic());
+        entity.setCoverPic(dto.getCoverPic());
         return entity;
     }
 }

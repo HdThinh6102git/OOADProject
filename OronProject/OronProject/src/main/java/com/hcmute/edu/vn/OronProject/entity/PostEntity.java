@@ -1,5 +1,7 @@
 package com.hcmute.edu.vn.OronProject.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +12,13 @@ public class PostEntity extends BaseEntity{
     @Column(name = "description")
     private String description;
     @Column(name = "display_scope")
-    private String displayScope;
+    private String displayScope ="public";
     @Column(name = "pictures")
     private String pictures;
     @Column(name = "status")
-    private Integer status;
-    @Column(name = "title")
-    private String title;
+    private Integer status = 1;
     @Column(name = "number_reaction")
-    private Integer numberReaction;
+    private Integer numberReaction = 0;
 
     //Relationship
     //Post and User
@@ -67,13 +67,7 @@ public class PostEntity extends BaseEntity{
         this.status = status;
     }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public Integer getNumberReaction() {
         return numberReaction;

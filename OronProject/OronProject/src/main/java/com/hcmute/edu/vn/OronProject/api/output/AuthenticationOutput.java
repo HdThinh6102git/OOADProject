@@ -1,8 +1,10 @@
-package com.hcmute.edu.vn.OronProject.dto;
+package com.hcmute.edu.vn.OronProject.api.output;
 
-public class UserDTO extends AbstractDTO{
+import java.util.Date;
+
+public class AuthenticationOutput {
     private String userName;
-    private String password;
+    private Long id;
     private String displayName;
     private String emailAddress;
     private String phoneNumber;
@@ -10,6 +12,7 @@ public class UserDTO extends AbstractDTO{
     private Integer status;
     private String profilePic;
     private String coverPic;
+    private String accessToken;
 
 
     public String getUserName() {
@@ -18,14 +21,6 @@ public class UserDTO extends AbstractDTO{
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getDisplayName() {
@@ -82,5 +77,21 @@ public class UserDTO extends AbstractDTO{
 
     public void setCoverPic(String coverPic) {
         this.coverPic = coverPic;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }
