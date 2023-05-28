@@ -1,6 +1,7 @@
 package com.hcmute.edu.vn.OronProject.service;
 
 import com.hcmute.edu.vn.OronProject.api.output.PostOutput;
+import com.hcmute.edu.vn.OronProject.api.output.PostRegisterOutput;
 import com.hcmute.edu.vn.OronProject.dto.PostDTO;
 
 
@@ -11,4 +12,6 @@ public interface IPostService {
     PostDTO save(PostDTO postDTO);
     void delete(long id);
     List<PostOutput> loadAllProfilePosts(long id);
+    PostDTO findOneById(Long id);
+    void updateStatus(PostDTO postDTO);
 }

@@ -4,6 +4,7 @@ import com.hcmute.edu.vn.OronProject.dto.PostDTO;
 import com.hcmute.edu.vn.OronProject.dto.UserDTO;
 import com.hcmute.edu.vn.OronProject.service.IPostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,5 +39,11 @@ public class PostAPI {
     public void deletePost(@PathVariable("id") Long id){
         postService.delete(id);
     }
+    @PutMapping(value = "/post/updatestatus/{id}")
+    public Object updatePostStatus(@RequestBody PostDTO dto, @PathVariable("id") Long id){
+        dto.setId(id);
 
+        postService.updateStatus(dto);
+        return ResponseEntity.status(200).body("Updated status successfully");
+    }
 }

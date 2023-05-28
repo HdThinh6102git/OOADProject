@@ -8,7 +8,7 @@ public class CommentEntity extends  BaseEntity{
     @Column(name = "content")
     private String content;
     @Column(name = "status")
-    private Integer status;
+    private Integer status = 1;
 
     //Relationship
     //Comment and Post

@@ -7,15 +7,13 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class PostOutput {
+public class PostRegisterOutput {
     private Long id;
     private String createdBy;
-    private Long userId;
-    private String profilePic;
     private String description;
-    private String pictures;
-    private Integer numberReaction;
-    private String displayScope;
-    private Date modifiedDate;
+    private Date createdDate;
+    private String profilePic;
     private Integer status;
+    private Long postId;
+
 }

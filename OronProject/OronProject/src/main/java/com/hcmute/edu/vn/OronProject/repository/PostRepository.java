@@ -12,11 +12,11 @@ import java.util.List;
 
 public interface PostRepository extends JpaRepository<PostEntity, Long> {
     @Query(
-            value = "select * from post p where p.status = 1 ORDER BY p.created_date desc",
+            value = "select * from post p where p.status != 0 ORDER BY p.created_date desc",
             nativeQuery = true)
     List<PostEntity> findActivePosts();
     @Query(
-            value = "select * from post p where p.status = 1 and p.user_id = :userid ORDER BY p.created_date desc",
+            value = "select * from post p where p.status != 0  and p.user_id = :userid ORDER BY p.created_date desc",
             nativeQuery = true)
     List<PostEntity> findActiveProfilePosts(@Param("userid") long userId);
 

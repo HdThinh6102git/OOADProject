@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "register")
 public class RegisterEntity extends BaseEntity{
     @Column(name = "status")
-    private Integer status;
+    private Integer status = 1;
 
     //Relationship
     //Register and Post

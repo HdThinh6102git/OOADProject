@@ -31,16 +31,15 @@ public class PostService implements IPostService {
         for (PostEntity postEntity: postEntityList) {
             PostOutput postOutput = new PostOutput();
             postOutput.setId(postEntity.getId());
-            postOutput.setCreatedBy(postEntity.getCreatedBy());
             postOutput.setUserId(postEntity.getUser().getId());
-            UserEntity userEntity = userRepository.getOne(postEntity.getUser().getId());
-            postOutput.setProfilePic(userEntity.getProfilePic());
+            postOutput.setProfilePic(postEntity.getUser().getProfilePic());
+            postOutput.setCreatedBy(postEntity.getUser().getDisplayName());
             postOutput.setDescription(postEntity.getDescription());
             postOutput.setPictures(postEntity.getPictures());
             postOutput.setNumberReaction(postEntity.getNumberReaction());
             postOutput.setDisplayScope(postEntity.getDisplayScope());
             postOutput.setModifiedDate(postEntity.getModifiedDate());
-
+            postOutput.setStatus(postEntity.getStatus());
             postOutputList.add(postOutput);
         }
 
@@ -90,19 +89,32 @@ public class PostService implements IPostService {
         for (PostEntity postEntity: postEntityList) {
             PostOutput postOutput = new PostOutput();
             postOutput.setId(postEntity.getId());
-            postOutput.setCreatedBy(postEntity.getCreatedBy());
             postOutput.setUserId(postEntity.getUser().getId());
-            UserEntity userEntity = userRepository.getOne(postEntity.getUser().getId());
-            postOutput.setProfilePic(userEntity.getProfilePic());
+            postOutput.setProfilePic(postEntity.getUser().getProfilePic());
+            postOutput.setCreatedBy(postEntity.getUser().getDisplayName());
             postOutput.setDescription(postEntity.getDescription());
             postOutput.setPictures(postEntity.getPictures());
             postOutput.setNumberReaction(postEntity.getNumberReaction());
             postOutput.setDisplayScope(postEntity.getDisplayScope());
             postOutput.setModifiedDate(postEntity.getModifiedDate());
-
+            postOutput.setStatus(postEntity.getStatus());
             postOutputList.add(postOutput);
         }
 
         return postOutputList;
+    }
+
+    @Override
+    public PostDTO findOneById(Long id) {
+        return postConverter.toDTO(postRepository.getReferenceById(id));
+    }
+
+    @Override
+    public void updateStatus(PostDTO postDTO) {
+
+        PostEntity oldPostEntity = postRepository.getOne(postDTO.getId());
+
+        oldPostEntity.setStatus(postDTO.getStatus());
+        oldPostEntity = postRepository.save(oldPostEntity);
     }
 }
