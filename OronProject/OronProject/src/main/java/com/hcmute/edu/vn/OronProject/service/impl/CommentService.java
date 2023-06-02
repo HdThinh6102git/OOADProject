@@ -76,6 +76,7 @@ public class CommentService implements ICommentService {
             commentOutput.setStatus(commentEntity.getStatus());
             commentOutput.setCreatedBy(commentEntity.getUser().getDisplayName());
             commentOutput.setModifiedDate(commentEntity.getModifiedDate());
+            commentOutput.setProfilePic(commentEntity.getUser().getProfilePic());
             commentOutputList.add(commentOutput);
         }
         return commentOutputList;

@@ -13,4 +13,5 @@ public class CommentOutput {
     private Integer status;
     private String createdBy;
     private Date modifiedDate;
+    private String profilePic;
 }
