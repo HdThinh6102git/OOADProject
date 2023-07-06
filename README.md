@@ -4,14 +4,14 @@
 
 Here is my source code for building Restful API of a social media app for user who want to share their redundant food or something, and then others can register to receive that things. 
 <p align="center">
-  <img src="demo/runapp.gif" width="300">
-  <img src="demo/video2.gif" width="300">
-  <img src="demo/loginregister.gif" width="300">
-  <img src="demo/registeraccount.gif" width="300"><br/>
-  <img src="demo/homepage.gif" width="300">
-  <img src="demo/getpost.gif" width="300">
-  <img src="demo/profilepage.gif" width="300">
-  <img src="demo/getpost.gif" width="300"><br/>
+  <img src="demo/runapp.gif" width="500">
+  <img src="demo/video2.gif" width="500">
+  <img src="demo/loginregister.gif" width="500">
+  <img src="demo/registeraccount.gif" width="500"><br/>
+  <img src="demo/homepage.gif" width="500">
+  <img src="demo/getpost.gif" width="500">
+  <img src="demo/profilepage.gif" width="500">
+  <img src="demo/getpost.gif" width="500"><br/>
   <i>Sample results</i>
 </p>
 
