@@ -19,6 +19,14 @@ Here is my source code for building Restful API of a social media app for users 
 
  In Vietnam's daily life, I realized that there are many households with excess food that is not used up. Meanwhile, some people need that amount of food for their living, to make pet food for example. Moreover, it is the demand to give and take old things together. From that actual need, I decided to build a social media app dedicated to sharing utensils (food, items, ..) to make this sharing more efficient and convenient and called the application as ORON (Our Redundances Other Necessaries).
 
+## Usecase diagram 
+
+<p align="center">
+  <i>Usecase diagram</i><br/>
+  <img src="demo/oronusecase.png" width="500"><br/>
+  <i>Link system analysis: [https://docs.google.com/document/d/1A_l-G4DdyuuDWZijfDaK-KKGS3IX7d5YfKWeXW2-wrk/edit?usp=sharing](https://docs.google.com/document/d/1diRNb74MNPIIrjgBVuJY4wnQwGYAeJEsLfGv4ZpVfOQ/edit?usp=sharing) </i><br/>
+</p>
+
 ## Main functions: 
 * **CRUD User**
 * **Authentication/Authorization (Spring Security/ JWT Auth)**
